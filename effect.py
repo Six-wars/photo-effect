@@ -33,7 +33,7 @@ def processor(img_filename):
 	grey_section.save(grey_section_filename)
 
 	bottom = (img_width/3) * 2
-	edge_section = edges.crop([img_height/3, 0, img_height, bottom])
+	edge_section = edges.crop([img_width/3, 0, bottom, img_height])
 	edge_section_filename = random_filename(path="sections/")
 	edge_section.save(edge_section_filename)
 
