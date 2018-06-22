@@ -17,6 +17,8 @@ def random_filename(path=None, length=None):
 
 def processor(img_filename):
 	original = Image.open(img_filename)
+
+	img_height, img_width = original.height, original.width
 	
 	greyscale = original.convert('1')
 	grey_filename = random_filename()
@@ -25,5 +27,19 @@ def processor(img_filename):
 	edges = original.filter(ImageFilter.CONTOUR)
 	edged_filename = random_filename(path="outline/")
 	edges.save(edged_filename)
+
+	grey_section = greyscale.crop([0, 0, img_height, img_width/3])
+	grey_section_filename = random_filename(path="sections/")
+	grey_section.save(grey_section_filename)
+
+	bottom = (img_width/3) * 2
+	edge_section = edges.crop([img_height/3, 0, img_height, bottom])
+	edge_section_filename = random_filename(path="sections/")
+	edge_section.save(edge_section_filename)
+
+	top = (img_height/3) * 2
+	original_section = original.crop([top, 0, img_height, img_width])
+	original_section_filename = random_filename(path="sections/")
+	original_section.save(original_section_filename)
 
 	return None
