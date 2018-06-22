@@ -28,7 +28,7 @@ def processor(img_filename):
 	edged_filename = random_filename(path="outline/")
 	edges.save(edged_filename)
 
-	grey_section = greyscale.crop([0, 0, img_height, img_width/3])
+	grey_section = greyscale.crop([0, 0, img_width/3, img_height])
 	grey_section_filename = random_filename(path="sections/")
 	grey_section.save(grey_section_filename)
 
