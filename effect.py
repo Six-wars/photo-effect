@@ -22,7 +22,7 @@ def processor(img_filename):
 	grey_filename = random_filename()
 	greyscale.save(grey_filename)
 
-	edges = original.filter(ImageFilter.FIND_EDGES).convert('1')
+	edges = original.filter(ImageFilter.CONTOUR)
 	edged_filename = random_filename(path="outline/")
 	edges.save(edged_filename)
 
