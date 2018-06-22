@@ -38,8 +38,8 @@ def processor(img_filename, delete_sections=False, delete_converts=False):
 	edge_section_filename = random_filename(path="sections/")
 	edge_section.save(edge_section_filename)
 
-	top = (img_height/3) * 2
-	original_section = original.crop([top, 0, img_height, img_width])
+	top = (img_width/3) * 2
+	original_section = original.crop([top, 0, img_width, img_height])
 	original_section_filename = random_filename(path="sections/")
 	original_section.save(original_section_filename)
 
