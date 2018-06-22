@@ -2,10 +2,9 @@ from PIL import Image, ImageFilter
 
 import string
 import random
-from sorl.thumbnail import get_thumbnail
 
 def random_filename(path=None, length=None):
-	text = string.uppercase + string.lowercase + string.digits
+	text = string.ascii_letters + string.digits
 
 	if path == None:
 		path = 'greyscale/'
