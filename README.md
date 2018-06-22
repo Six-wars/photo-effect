@@ -17,13 +17,14 @@ For example here's an aquaman pic
 
 ![](./merged/SSi6Dg9RMvO.png)
 
-To use this first make sure you have pip installed and the right version from the requirements file
+To use this first make sure you have PIL installed and the right version from the requirements file
 
 > pip install -r req.txt
 
 Then you can for convinience place the image in the original folder and from python running on the same folder
 
 > from effect import processor
+
 > processor('original/aquaman.jpg')
 
 The function takes the filename and two additional parameters `delete_sections` and `delete_converts` that are by default are true so it deletes the converted images and sections once it makes the merged image, if set to false will not delete the images.
