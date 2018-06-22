@@ -16,7 +16,7 @@ def random_filename(path=None, length=None):
 
 	return path + ''.join( [random.choice(text) for x in length] ) + '.png'
 
-def processor(img_filename, delete_sections=False, delete_converts=False):
+def processor(img_filename, delete_sections=True, delete_converts=True):
 	original = Image.open(img_filename)
 
 	img_height, img_width = original.height, original.width
