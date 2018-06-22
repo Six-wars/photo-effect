@@ -1,4 +1,4 @@
-from PIL import Image
+from PIL import Image, ImageFilter
 
 import string
 import random
@@ -18,9 +18,13 @@ def random_filename(path=None, length=None):
 
 def processor(img_filename):
 	original = Image.open(img_filename)
+	
 	greyscale = original.convert('1')
-
 	grey_filename = random_filename()
 	greyscale.save(grey_filename)
+
+	edges = original.filter(ImageFilter.FIND_EDGES)
+	edged_filename = random_filename(path="outline/")
+	edges.save(edged_filename)
 
 	return None
